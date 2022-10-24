@@ -1,6 +1,8 @@
 package v1;
 
 import javax.print.attribute.standard.RequestingUserName;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Population {
@@ -34,6 +36,21 @@ public class Population {
 
     public int size(){
         return this.population.length ;
+    }
+
+    public Individual getFittest(int offset){
+        Arrays.sort(this.population, new Comparator<Individual>(){
+            @Override
+            public int compare(Individual o1, Individual o2) {
+                if(o1.getFitness()  > o2.getFitness()){
+                    return -1;
+                }else if(o1.getFitness() < o1.getFitness()){
+                    return 1;
+                }
+                return 0;
+            }
+        });
+        return this.population[offset];
     }
 
     public Individual setIndividual(int offset, Individual individual){

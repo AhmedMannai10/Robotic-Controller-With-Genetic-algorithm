@@ -49,5 +49,14 @@ public class Individual {
         this.fitness = fitness;
     }
 
+    public String toString(){
+        String output = "";
+
+        for(int gene = 0; gene < this.chromosome.length; gene++){
+            output += this.chromosome[gene];
+        }
+        return output;
+    }
+
 
 }
