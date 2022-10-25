@@ -8,11 +8,10 @@ public class AllOnesGA {
         GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.95, 0);
 
         //Initialize population
-        Population population = ga.initPopulation(50);
+        Population population = ga.initPopulation(20);
 
         ga.evalPopulation(population);
         int generation = 1;
-
 //        System.out.println(Arrays.toString(population.getIndividuals()));
 
         while(ga.isTerminationConditionMet(population) == false){
@@ -32,10 +31,11 @@ public class AllOnesGA {
 
             //Increment the current generation
             generation++;
+
         }
 
         System.out.println("Found solution in " + generation + " generations");
-        System.out.println("Best solution: " + population.getFittest(0).toString());
+        System.out.println("Best solution: " + population.getFittest(0).toString() + "\n\n");
 
 
     }

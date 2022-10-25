@@ -50,6 +50,7 @@ public class Population {
                 return 0;
             }
         });
+        System.out.println(Arrays.toString(population));
         return this.population[offset];
     }
 

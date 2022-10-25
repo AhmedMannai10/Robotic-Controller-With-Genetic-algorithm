@@ -44,8 +44,12 @@ public class GeneticAlgorithm {
 
         // calculate fitness
         double fitness = (double) correctGenes / individual.getChromosomeLength();
+        if(fitness == 1) {
 
-        individual.setFitness(fitness);
+            System.out.println("The individual : " + individual + "is The fittest" );
+        }
+
+            individual.setFitness(fitness);
 
         return fitness;
     }
@@ -75,7 +79,6 @@ public class GeneticAlgorithm {
 
             spinWheel = spinWheel +  calcFitness(individual);
             if(spinWheel >= rouletteWheelPosition){
-                System.out.println(individual.toString());
                 return individual;
             }
         }
